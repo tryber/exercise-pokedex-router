@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./images/pokedex-bg-3.jpg');
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 .pokemon {
@@ -22,4 +25,5 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 10px 10px;
+  background-color: rgba(200, 200, 200, 0.5)
 }

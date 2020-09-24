@@ -1,0 +1,11 @@
+.about-main-section {
+  margin: 10px 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: rgba(150, 150, 150, 0.5)
+}
+
+.about-text {
+  line-height: 2.5em;
+}

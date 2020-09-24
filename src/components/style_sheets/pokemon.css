@@ -8,3 +8,44 @@
   border: 1px gray solid;
   border-radius: 10px;
 }
+
+#electric {
+  background-color: rgba(255, 255, 0, 0.6);
+  border: 2px rgb(255, 255, 0) solid;
+}
+
+#fire {
+  background-color: rgba(255, 0, 0, 0.6);
+  border: 2px rgb(255, 0, 0) solid;
+}
+
+#bug {
+  background-color: rgba(0, 255, 0, 0.6);
+  border: 2px rgb(0, 255, 0) solid;
+}
+
+#poison {
+  background-color: rgba(255, 0, 255, 0.6);
+  border: 2px rgb(255, 0, 255) solid;
+}
+
+#psychic {
+  background-color: rgba(200, 200, 200, 0.6);
+  border: 2px rgb(200, 200, 200) solid;
+}
+
+#dragon {
+  background-color: rgba(255, 200, 0, 0.6);
+  border: 2px rgb(255, 200, 0) solid;
+}
+
+#normal {
+  background-color: rgba(150, 150, 150, 0.6);
+  border: 2px rgb(150, 150, 150) solid;
+}
+
+#pokemon-gif {
+  border-radius: 100%;
+  background-image: url('./images/open-pokeball.png');
+  background-size: cover;
+}
