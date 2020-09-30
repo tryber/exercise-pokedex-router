@@ -9,6 +9,7 @@ class Header extends React.Component {
         <nav>
           <div className='navigation-item'><Link to='/'>Home</Link></div>
           <div className='navigation-item'><Link to='/about'>About</Link></div>
+          <div className='navigation-item'><Link to='/favorite-pokemons'>Favorite Pokemons</Link></div>
         </nav>
       </header>
     )

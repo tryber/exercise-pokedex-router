@@ -1,10 +1,13 @@
 import React from 'react';
 import './style_sheets/pokemon.css';
 import { Link } from 'react-router-dom';
+import favStar from './style_sheets/images/star2.png'
 
 class Pokemon extends React.Component {
   render() {
     const {name, type, averageWeight, image, id} = this.props.pokemon;
+    const { isFavorite } = this.props;
+    console.log(isFavorite);
     return (
       <div className='pokemon' id={type.toLowerCase()}>
         <div>
@@ -21,6 +24,7 @@ class Pokemon extends React.Component {
           </Link>
         </div>
         <img src={image} alt={`${name} sprite`} id='pokemon-gif' />
+        {isFavorite === true ? <img src={favStar} className='star' alt='favorite-star'/> : console.log('Pokemon não favoritado')}
       </div>
     );
   }

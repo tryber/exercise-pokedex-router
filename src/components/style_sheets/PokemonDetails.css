@@ -1,60 +1,53 @@
-.pokemon {
+.details-container {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex: 1 1 auto;
-  min-width: 25%;
-  margin: 10px 10px;
-  border: 1px gray solid;
-  border-radius: 10px;
+  flex-flow: column nowrap;
 }
 
-.star {
-  width: 35px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 100%;
-  padding: 2px;
-  margin: 5px;
-  align-self: flex-start;
+.fav-checkbox-container {
+  width: 10%;
+  align-self: center;
+  border-radius: 2px;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 10px 0;
 }
 
-#electric {
+#details-pokemon-gif {
+  width: 100px;
+  align-self: center;
+}
+
+#Electric {
   background-color: rgba(255, 255, 0, 0.6);
   border: 2px rgb(255, 255, 0) solid;
 }
 
-#fire {
+#Fire {
   background-color: rgba(255, 0, 0, 0.6);
   border: 2px rgb(255, 0, 0) solid;
 }
 
-#bug {
+#Bug {
   background-color: rgba(0, 255, 0, 0.6);
   border: 2px rgb(0, 255, 0) solid;
 }
 
-#poison {
+#Poison {
   background-color: rgba(255, 0, 255, 0.6);
   border: 2px rgb(255, 0, 255) solid;
 }
 
-#psychic {
+#Psychic {
   background-color: rgba(200, 200, 200, 0.6);
   border: 2px rgb(200, 200, 200) solid;
 }
 
-#dragon {
+#Dragon {
   background-color: rgba(255, 200, 0, 0.6);
   border: 2px rgb(255, 200, 0) solid;
 }
 
-#normal {
+#Normal {
   background-color: rgba(150, 150, 150, 0.6);
   border: 2px rgb(150, 150, 150) solid;
-}
-
-#pokemon-gif {
-  border-radius: 100%;
-  background-image: url('./images/open-pokeball.png');
-  background-size: cover;
 }

@@ -35,14 +35,25 @@ class Pokedex extends React.Component {
     return [...new Set(pokemons.reduce((types, {type}) => [...types, type], []))];
   }
 
+  // change the way it is checked
+  isPokemonFavorite( { id } ) {
+    const { favoritePokemons } = this.props;
+    
+    const checkFavorite = favoritePokemons.find(idInArray => idInArray === id);
+
+    const returned = checkFavorite !== undefined ? true : false;
+
+    return returned
+  }
+
   render() {
     const filteredPokemons = this.fetchFilteredPokemons();
     const pokemonTypes = this.fetchPokemonTypes();
     const pokemon = filteredPokemons[this.state.pokemonIndex];
-
+    const isFavorite = this.isPokemonFavorite(pokemon);
     return (
       <div className="pokedex">
-        <Pokemon pokemon={pokemon} />
+        <Pokemon pokemon={pokemon} isFavorite={isFavorite} />
         <div className="pokedex-buttons-panel">
           <Button
             onClick={() => this.filterPokemons('all')}
