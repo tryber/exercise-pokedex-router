@@ -7,7 +7,6 @@ class Pokemon extends React.Component {
   render() {
     const {name, type, averageWeight, image, id} = this.props.pokemon;
     const { isFavorite } = this.props;
-    console.log(isFavorite);
     return (
       <div className='pokemon' id={type.toLowerCase()}>
         <div>
@@ -24,7 +23,7 @@ class Pokemon extends React.Component {
           </Link>
         </div>
         <img src={image} alt={`${name} sprite`} id='pokemon-gif' />
-        {isFavorite === true ? <img src={favStar} className='star' alt='favorite-star'/> : console.log('Pokemon não favoritado')}
+        {isFavorite === true ? <img src={favStar} className='star' alt='favorite-star'/> : <span />}
       </div>
     );
   }

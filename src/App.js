@@ -9,18 +9,20 @@ import {
 } from './pages'
 import pokemons from './data/data'
 import pokedexLogo from './images/Pokedex.webp'
-
-// testes
+import * as api from './services/api';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.handleStateChange = this.handleStateChange.bind(this);
+    this.getFavPokemonsFromLocalStorage = this.getFavPokemonsFromLocalStorage.bind(this);
+
 
     this.state = {
       pokemonList: [ ...pokemons],
-      favoritePokemons: []
+      favoritePokemons: [],
+      pokemonListNew: [],
     }
   }
 
@@ -49,7 +51,7 @@ class App extends React.Component {
     return numberArray
   }
 
-  componentDidMount() {
+  getFavPokemonsFromLocalStorage () {
     const storedFavoritePokemons = localStorage.getItem('favoritePokemons');
     
     if ( storedFavoritePokemons ) {
@@ -57,11 +59,32 @@ class App extends React.Component {
       this.setState({ favoritePokemons: treatedData })
     }
   }
+  
+fetchPokemonStatus (pokemonNames) {
+    const endpoint = 'https://pokeapi.co/api/v2/pokemon/'
+
+    const orderedPokemonList = pokemonNames.sort();
+  
+    pokemonNames.forEach(pokemon => {
+      const fetchUrl = `${endpoint}${pokemon}`;
+      // console.log(fetchUrl);
+    })
+    console.log(orderedPokemonList);
+  }
+
+  async componentDidMount() {
+    await this.getFavPokemonsFromLocalStorage();
+
+    const pokemonNames = await api.treatPokemonList();
+    this.fetchPokemonStatus(pokemonNames);
+  }
 
   componentDidUpdate() {
     const { favoritePokemons } = this.state;
     localStorage.setItem('favoritePokemons', favoritePokemons)
   }
+
+
 
   render() {
 
