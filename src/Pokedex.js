@@ -1,72 +1,77 @@
 import React from 'react';
-import Pokemon from './Pokemon';
-import Button from './Button';
-import './pokedex.css';
+import PropTypes from 'prop-types';
+import Pokemon from './Pokemon.js';
+import Button from './Button.js';
+import pokemons from './data.js';
+import './Pokedex.css';
 
 class Pokedex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {pokemonIndex: 0, filteredType: 'all'};
+  constructor() {
+    super();
+    this.changePokemon = this.changePokemon.bind(this);
+    this.filterPokemon = this.filterPokemon.bind(this);
+    this.state = {
+      pokemonIndex: 0,
+      pokemonsFiltered: pokemons,
+    }
   }
 
-  filterPokemons(filteredType) {
-    this.setState({filteredType, pokemonIndex: 0});
-  }
-
-  nextPokemon(numberOfPokemons) {
-    this.setState(state => ({
-      pokemonIndex: (state.pokemonIndex + 1) % numberOfPokemons,
-    }));
-  }
-
-  fetchFilteredPokemons() {
-    const {pokemons} = this.props;
-    const {filteredType} = this.state;
-
-    return pokemons.filter(pokemon => {
-      if (filteredType === 'all') return true;
-      return pokemon.type === filteredType;
+  filterPokemon({ target }) {
+    const type = target.value;
+    this.setState(() => {
+      if (type === 'All') {
+        return ({pokemonIndex:0, pokemonsFiltered: pokemons})
+      }
+      return ({pokemonIndex:0, pokemonsFiltered: pokemons.filter(pokemon => pokemon.type === type)});
     });
   }
 
-  fetchPokemonTypes() {
-    const {pokemons} = this.props;
-
-    return [...new Set(pokemons.reduce((types, {type}) => [...types, type], []))];
+  changePokemon() {
+    this.setState((actualState) => {
+      if (actualState.pokemonIndex < this.state.pokemonsFiltered.length - 1) {
+        return ({pokemonIndex: actualState.pokemonIndex + 1})
+      } else {
+        return ({pokemonIndex: 0})
+      }
+    });
   }
 
   render() {
-    const filteredPokemons = this.fetchFilteredPokemons();
-    const pokemonTypes = this.fetchPokemonTypes();
-    const pokemon = filteredPokemons[this.state.pokemonIndex];
+    const typeList = ['Fire', 'Psychic', 'Electric', 'Bug', 'Poison', 'Normal', 'Dragon', 'All'];
+    
+    const pokemonInScreen = this.state.pokemonsFiltered[this.state.pokemonIndex];
+    // Handle function received to favorite functionality
+    const { handle } = this.props;
+
+    // Verify if the pokemon is favorite to check or not the checkbox
+    const check = this.props.favorites.includes(pokemonInScreen.name);
 
     return (
-      <div className="pokedex">
-        <Pokemon pokemon={pokemon} />
-        <div className="pokedex-buttons-panel">
-          <Button
-            onClick={() => this.filterPokemons('all')}
-            className="filter-button">
-            All
-          </Button>
-          {pokemonTypes.map(type => (
-            <Button
-              key={type}
-              onClick={() => this.filterPokemons(type)}
-              className="filter-button">
-              {type}
-            </Button>
-          ))}
+      <div className='pokedex'>
+        <Pokemon pokemon={pokemonInScreen} link='true' isFavorite={check} handle={handle} />
+        <div className='pokedex-buttons-container'>
+          { typeList.sort().map((type, index) => <Button key={index} disabled='false' handle={this.filterPokemon} pokemonType={type} label={type}/> )}
         </div>
-        <Button
-          className="pokedex-button"
-          onClick={() => this.nextPokemon(filteredPokemons.length)}
-          disabled={filteredPokemons.length <= 1}>
-          Próximo pokémon
-        </Button>
+        <div className='next-button'>
+          <Button handle={this.changePokemon} disabled={this.state.pokemonsFiltered.length === 1 ? true : false} label='Next'/>
+        </div>
       </div>
     );
   }
+}
+
+Pokedex.propTypes = {
+  pokemons:PropTypes.exact({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    averageWeight: PropTypes.exact({
+      value: PropTypes.number,
+      measurementUnit: PropTypes.string
+    }),
+    image: PropTypes.string,
+    moreInfo: PropTypes.string
+  })
 }
 
 export default Pokedex;

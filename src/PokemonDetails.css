@@ -1,0 +1,70 @@
+.pokemon-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.details-section {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.title {
+  background-color: rgb(4, 71, 182);
+  border-radius: 8px;
+  color: white;
+  margin-bottom: -10px;
+  padding: 0 5%;
+  text-decoration: underline #FA651D;
+  z-index: 1;
+}
+
+.maps-container {
+  align-items: center;
+  background-color: rgb(4, 71, 182);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px rgb(18, 102, 238);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  font-weight: 400;
+  justify-content: center;
+  min-width: 50vw;
+  padding: 5%;
+}
+
+.maps-container img {
+  border: solid 5px white;
+  border-radius: 5px;
+  height: 20vh;
+  margin-bottom: -15px;
+}
+
+.maps-container div {
+  margin: 2%;
+}
+
+.maps-container:hover {
+  box-shadow: 0 0 20px rgb(124, 252, 0);
+}
+
+.favorite-check-container {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 1%;
+  min-width: 30vw;
+}
+
+.favorite-check-container label {
+  margin-left: 1.5%;
+}
+
+.favorite-check-container input:hover {
+  box-shadow: 0 0 10px rgb(124, 252, 0);
+}

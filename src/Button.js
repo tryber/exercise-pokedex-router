@@ -1,14 +1,14 @@
-import React from "react";
-import "./button.css";
+import React from 'react';
+import './Button.css';
 
-const Button = ({ className, children, disabled, onClick }) => (
-  <button
-    onClick={onClick}
-    className={`button-text ${className}`}
-    disabled={disabled}
-  >
-    {children}
-  </button>
-);
+class Button extends React.Component {
+  render() {
+    const {handle, pokemonType, label, disabled} = this.props;
+    if (disabled === true) return <button onClick={handle} disabled value={pokemonType}>{label}</button>
+    return (
+      <button onClick={handle} value={pokemonType}>{label}</button>
+    );
+  }
+}
 
 export default Button;

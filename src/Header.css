@@ -1,0 +1,16 @@
+.menu {
+  align-items: center;
+  background-color: rgb(105, 102, 102);
+  box-shadow: 0px 2px 2px rgb(66, 70, 62);
+  display: flex;
+  margin-bottom: 4%;
+  min-height: 10vh;
+  padding: 0 5%;
+}
+
+.link {
+  color: white;
+  font-size: 30px;
+  margin: 1%;
+  text-decoration: none;
+}

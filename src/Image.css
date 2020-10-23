@@ -1,0 +1,10 @@
+.img-container {
+  align-items: center;
+  background-image: url('imgs/pokeball.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 120px;
+  justify-content: center;
+  min-width: 120px;
+}

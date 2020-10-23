@@ -1,0 +1,27 @@
+.not-found-message-container {
+  align-items: center;
+  background-color: rgb(4, 71, 182);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px rgb(18, 102, 238);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 400;
+  justify-content: center;
+  margin: 0 20%;
+  min-width: 50vw;
+  padding: 2% 5%;
+}
+
+.not-found-message-container img {
+  border: solid 2px white;
+  border-radius: 5%;
+  margin: 2%;
+  min-height: 30vw;
+  min-width: 30vw;
+}
+
+.not-found-message-container:hover {
+  box-shadow: 0 0 20px rgb(124, 252, 0);
+}

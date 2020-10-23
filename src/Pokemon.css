@@ -1,0 +1,43 @@
+.card {
+  align-items: center;
+  background-color: rgb(4, 71, 182);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px rgb(18, 102, 238);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5%;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgb(124, 252, 0);
+}
+
+.favorite-column {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 20vh;
+  min-width: 5vh;
+}
+
+.favorite-icon {
+  border: solid 2px white;
+  border-radius: 100%;
+  min-height: 2vh;
+  padding: 20%;
+  z-index: 1;
+}
+
+.favorite-icon:hover {
+  color: yellow;
+  border-color: yellow;
+  box-shadow: 0 0 10px 2px rgb(66, 70, 62);
+}
+
+.favorite-icon.checked {
+  color: yellow;
+  border-color: yellow;
+}
