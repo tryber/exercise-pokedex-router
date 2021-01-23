@@ -68,7 +68,7 @@ class PokemonDetails extends React.Component {
         <p>{pokemon.summary}</p>
         <ul>
           {pokemon.foundAt.map((e) => (
-            <li>
+            <li key={e.location}>
               <img src={e.map} alt="Pokemon Found at Map" />
             </li>
           ))}
