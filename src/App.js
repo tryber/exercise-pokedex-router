@@ -6,6 +6,7 @@ import NavPokedex from "./NavPokedex";
 import Pokedex from "./Pokedex";
 import AboutPokedex from "./AboutPokedex";
 import BookmarkedPokemons from "./BookmarkedPokemons";
+import PokemonDetails from "./PokemonDetails";
 
 function App() {
   return (
@@ -21,6 +22,12 @@ function App() {
           />
           <Route path="/about" component={AboutPokedex} />
           <Route path="/bookmarked" component={BookmarkedPokemons} />
+          <Route
+            path={"/pokemons/:id"}
+            render={(props) => (
+              <PokemonDetails {...props} pokemons={pokemons} />
+            )}
+          />
         </Switch>
       </BrowserRouter>
     </div>
