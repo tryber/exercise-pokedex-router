@@ -1,5 +1,4 @@
-Esse é um projeto para o conteúdo de `React Router Dom`.
-
+Esse é um exercício para o conteúdo de `React Router Dom`.
 ### Antes de iniciar
 
 Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
@@ -41,6 +40,20 @@ Hoje você vai incrementar a sua Pokedex utilizando Router. Caso você queira re
 Se você não tiver feito, sem problemas, aqui você ja vai encontrar o comportamento esperado da sua Pokedex após os últimos exercícios.
 
 Nesse repositório ja foi instalado o `react-router-dom`, só é necessário executar `npm install` uma vez dentro da pasta raiz para utilizá-lo.
+
+Nesse exercício os arquivos organizados em pastas, dentro das pastas `/components` e `/pages` você vai encontrar um arquivo index.js, esse arquivo serve pra facilitar a importação e exportação de componentes, por exemplo:
+
+export { default as Button } from './Button';
+export { default as Pokemon } from './Pokemon';
+
+e na hora de importar:
+
+import { Button, Pokemon } from './components';
+
+Isso é importante porque mantém seu código organizado e evita repetições, como por exemplo:
+
+import Button from './components/Button';
+import Pokemon from './components/Pokemon';
 
 #### Exercício 1
 
