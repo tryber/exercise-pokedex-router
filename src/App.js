@@ -20,7 +20,16 @@ class App extends Component {
   }
 
   setFavorited(value) {
-    this.setState({});
+    this.setState({ pokemons: value });
+  }
+
+  componentDidUpdate() {
+    localStorage.pokemons = JSON.stringify(this.state.pokemons);
+  }
+
+  componentDidMount() {
+    const pokemons = JSON.parse(localStorage.pokemons);
+    this.setState({ pokemons: pokemons });
   }
   render() {
     return (

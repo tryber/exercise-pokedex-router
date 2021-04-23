@@ -21,6 +21,7 @@ class PokemonDetail extends Component {
       if (poke.id === Number(id)) {
         poke.favorited = checked;
       }
+      return poke;
     });
     setFavorited(newPokemons);
   }
