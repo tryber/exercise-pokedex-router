@@ -1,7 +1,6 @@
 import React from 'react';
 import Pokemon from './Pokemon';
 import Button from './Button';
-import { Route } from 'react-router-dom';
 import './pokedex.css';
 
 class Pokedex extends React.Component {

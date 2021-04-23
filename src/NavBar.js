@@ -12,7 +12,7 @@ class NavBar extends Component {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/">Favorite</Link>
+          <Link to="/favorited">Favorite</Link>
         </li>
       </ul>
     );
