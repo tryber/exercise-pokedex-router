@@ -42,6 +42,7 @@ class Pokedex extends React.Component {
 
     return (
       <div className="pokedex">
+        <h1 className="pokedexText">Pokedex</h1>
         <Pokemon pokemon={pokemon} />
         <div className="pokedex-buttons-panel">
           <Button

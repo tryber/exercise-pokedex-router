@@ -23,3 +23,47 @@ body {
   flex-wrap: wrap;
   margin: 10px 10px;
 }
+
+.pokedexText {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73, 79, 82);
+  color: white;
+}
+
+.nav-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  color: white;
+  list-style: none;
+}
+
+.pokemon-habitat {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.favorite-icon {
+  width: 20px;
+  margin: 10px;
+  align-self: start;
+}
+
+.pokedexList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
